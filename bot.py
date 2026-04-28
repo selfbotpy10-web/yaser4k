@@ -105,12 +105,34 @@ async def child_music(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
 
 def run_child_bot(token):
+
     async def start_bot():
         app = ApplicationBuilder().token(token).build()
 
+        # /start
         app.add_handler(CommandHandler("start", child_start))
+
+        # پیام‌های متنی (جستجوی موزیک)
         app.add_handler(
             MessageHandler(
+                filters.TEXT & ~filters.COMMAND,
+                child_music
+            )
+        )
+
+        print("Child Bot Started")
+
+        # اجرا (در PTB جدید همین کافی است)
+        await app.initialize()
+        await app.start()
+        await app.updater.start_polling()
+
+        # نگه داشتن ربات زنده
+        await asyncio.Event().wait()
+
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+    loop.run_until_complete(start_bot())
                 filters.TEXT & ~filters.COMMAND,
                 child_music
             )
@@ -386,4 +408,6 @@ app.add_handler(CommandHandler("start", start))
 app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handler))
 
 print("🚀 Pro Music Bot Running...")
-app.run_polling()
+
+if __name__ == "__main__":
+    app.run_polling()
