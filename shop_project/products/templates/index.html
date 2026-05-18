@@ -2,54 +2,39 @@
 <html lang="fa">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎈 ToyLand</title>
+    <title>ToyLand</title>
 
     {% load static %}
     <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
+
 <body>
 
-    <h1 class="title">🎈 ToyLand</h1>
+<h1 class="title">🎈 ToyLand</h1>
 
-    <div class="products">
+<div class="container">
 
-        {% for product in products %}
+    {% for product in products %}
 
-        <div class="card">
+    <div class="card">
+
+        <div class="img-box">
             <img src="{{ product.image.url }}" alt="">
-
-            <h2>{{ product.name }}</h2>
-
-            <p>{{ product.price }} $ </p>
-
-            <p>{{ product.description }}</p>
-
-            <!-- 💳 PayPal Button -->
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-
-                <input type="hidden" name="cmd" value="_xclick">
-
-                <!-- 🔴 ایمیل PayPal خودت را اینجا بگذار -->
-                <input type="hidden" name="business" value="YOUR_PAYPAL_EMAIL">
-
-                <input type="hidden" name="item_name" value="{{ product.name }}">
-
-                <input type="hidden" name="amount" value="{{ product.price }}">
-
-                <input type="hidden" name="currency_code" value="USD">
-
-                <button type="submit">
-                    خرید 💳
-                </button>
-
-            </form>
-
         </div>
 
-        {% endfor %}
+        <h2>{{ product.name }}</h2>
+
+        <p class="price">{{ product.price }} $</p>
+
+        <p class="desc">{{ product.description }}</p>
+
+        <button class="btn">خرید 💳</button>
 
     </div>
+
+    {% endfor %}
+
+</div>
 
 </body>
 </html>
