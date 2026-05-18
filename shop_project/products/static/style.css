@@ -1,0 +1,320 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:sans-serif;
+
+    background:
+    radial-gradient(circle at top left,#312e81,#0f172a 40%),
+    radial-gradient(circle at bottom right,#0ea5e9,#111827 40%);
+
+    min-height:100vh;
+
+    color:white;
+
+    overflow-x:hidden;
+}
+
+/* اسکرول */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:
+    linear-gradient(#7b2dff,#00d0ff);
+
+    border-radius:20px;
+}
+
+/* عنوان */
+
+.title{
+
+    text-align:center;
+
+    padding:35px;
+
+    font-size:45px;
+
+    font-weight:bold;
+
+    background:
+    rgba(255,255,255,0.05);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:
+    1px solid rgba(255,255,255,0.1);
+
+    box-shadow:
+    0 0 25px rgba(0,0,0,0.4);
+
+    letter-spacing:2px;
+
+    text-shadow:
+    0 0 15px rgba(255,255,255,0.5);
+}
+
+/* محصولات */
+
+.products{
+
+    width:95%;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(290px,1fr));
+
+    gap:35px;
+
+    padding:50px 20px;
+
+    justify-items:center;
+}
+
+/* کارت */
+
+.card{
+
+    width:290px;
+
+    background:
+    rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border:
+    1px solid rgba(255,255,255,0.12);
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    transition:0.5s;
+
+    position:relative;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.5),
+    inset 0 0 20px rgba(255,255,255,0.03);
+}
+
+/* نور کارت */
+
+.card::before{
+
+    content:'';
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    background:
+    rgba(0,208,255,0.15);
+
+    border-radius:50%;
+
+    top:-90px;
+    right:-90px;
+
+    filter:blur(55px);
+}
+
+/* هاور کارت */
+
+.card:hover{
+
+    transform:
+    translateY(-15px)
+    scale(1.03);
+
+    box-shadow:
+    0 20px 45px rgba(0,208,255,0.4),
+    0 0 40px rgba(123,45,255,0.3);
+}
+
+/* عکس */
+
+.card img{
+
+    width:100%;
+
+    height:240px;
+
+    object-fit:contain;
+
+    background:white;
+
+    padding:15px;
+
+    display:block;
+
+    transition:0.5s;
+}
+
+/* هاور عکس */
+
+.card:hover img{
+    transform:scale(1.06);
+}
+
+/* دکمه خرید شیشه‌ای */
+
+.buy-btn{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:18px;
+
+    text-decoration:none;
+    color:white;
+
+    font-size:18px;
+    font-weight:bold;
+
+    /* شیشه‌ای + سازگار برای همه لپ‌تاپ‌ها */
+    background:rgba(30, 41, 59, 0.55);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    border-top:1px solid rgba(255,255,255,0.25);
+    border-bottom:1px solid rgba(255,255,255,0.1);
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,0.4),
+    inset 0 1px 1px rgba(255,255,255,0.15);
+
+    transition:0.3s;
+
+    position:relative;
+    overflow:hidden;
+
+    cursor:pointer;
+}
+
+/* نور داخل دکمه */
+.buy-btn::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.35),
+        transparent
+    );
+    transition:0.6s;
+}
+
+/* هاور */
+.buy-btn:hover{
+    background:rgba(123,45,255,0.35);
+    transform:scale(1.05);
+    box-shadow:
+    0 0 25px rgba(0,208,255,0.5),
+    0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* حرکت نور */
+.buy-btn:hover::before{
+    left:100%;
+}
+
+/* محتوا */
+
+.content{
+
+    padding:25px;
+
+    position:relative;
+
+    z-index:2;
+}
+
+/* اسم محصول */
+
+.content h3{
+
+    font-size:26px;
+
+    margin-bottom:15px;
+
+    color:white;
+
+    text-shadow:
+    0 0 10px rgba(255,255,255,0.3);
+}
+
+/* توضیحات */
+
+.desc{
+
+    color:#d1d5db;
+
+    line-height:1.9;
+
+    margin-bottom:20px;
+
+    font-size:14px;
+}
+
+/* قیمت */
+
+.price{
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    background:
+    linear-gradient(
+    45deg,
+    #00d0ff,
+    #7b2dff
+    );
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+}
+
+/* موبایل */
+
+@media(max-width:900px){
+
+    .title{
+
+        font-size:30px;
+
+        padding:25px;
+    }
+
+    .products{
+        padding:25px;
+    }
+
+    .card{
+
+        width:100%;
+
+        max-width:320px;
+    }
+
+}
