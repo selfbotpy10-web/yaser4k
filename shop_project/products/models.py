@@ -25,8 +25,6 @@ class Product(models.Model):
 
     description = models.TextField()
 
-    created_at = models.DateTimeField(auto_now_add=True)
-
     is_available = models.BooleanField(default=True)
 
     def __str__(self):
