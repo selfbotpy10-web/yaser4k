@@ -77,7 +77,7 @@ $rpto = $update->message->reply_to_message->forward_from->id;
 // اینجا ها رو ادیت بزنید
 $admins = array("8852042397","8852042397"); // ای دی عددی ادمین ها
 $bottag = "Ffgdddbot"; // ای دی ربات بدون @
-$address = "Https://Sourrce_kade.ir/selfisaz"; // ادرس هاست + پوشه
+$address = "https://yaser4k-wteb.onrender.com/"; // ادرس هاست + پوشه
 $chanloc1 = "caghdh"; // ای دی کانال بدون @
 $dev = "8852042397"; // ای دی عددی مالک
 $baner = "https://t.me/slokings/7828"; // لینک بنر زیر مجموعه
