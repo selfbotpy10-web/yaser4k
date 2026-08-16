@@ -4,7 +4,7 @@ $document = 'cli1';
 $documentt = 'cli2';
 $documenttt = 'cli3';
 $documentttt = 'cli4';
-$public = '#folder'; // اینجا ادیت بشه
+$public = 'https://yaser4k-wteb.onrender.com/'; // اینجا ادیت بشه
 //•••••••••••••••••••••••••••••••••••••••••••
 $scan = scandir($document);
 $scan = array_diff($scan, ['.','..']);
