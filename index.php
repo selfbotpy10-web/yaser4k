@@ -7,7 +7,7 @@
 ••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
 */
 error_reporting(0);
-define('API_KEY','1999122214:AAGlfW2Tn4mdVUFkB_ompmgfb2gdgWw77Lk');
+define('API_KEY','8812991779:AAFUZDkZ8252Ce7d5OcUM4Q5OMdE-xsPa6s');
 include("jdf.php");
 //===[امنیت دامنه]===//
 $telegram_ip_ranges = [
@@ -162,22 +162,22 @@ if(!file_exists('panel')){
 mkdir('panel');
 }
 if(!file_exists('panel/id_nitro.txt')){
-$id_nitro = "971881348";
+$id_nitro = "8889459676";
 }else{
 $id_nitro = file_get_contents("panel/id_nitro.txt");
 }
 if(!file_exists('panel/support.txt')){
-$support = "SOLTON_SHIRAZEY";
+$support = "Srlf_2036bot";
 }else{
 $support = file_get_contents("panel/support.txt");
 }
 if(!file_exists('panel/channel.txt')){
-$channel = "FlashSelf";
+$channel = "Nim_Shab2";
 }else{
 $channel = file_get_contents("panel/channel.txt");
 }
 if(!file_exists('panel/channel2.txt')){
-$channel2 = "Flash_Self";
+$channel2 = "Nim_Shab2";
 }else{
 $channel2 = file_get_contents("panel/channel2.txt");
 }
@@ -193,7 +193,7 @@ $api_hash = file_get_contents("source/api_hash.txt");
 @$username = 'flashself_bots';
 @$password = 'yXWTvNfnx9FB';
 @$db = 'flashself_bots';
-@$dev = array("971881348","1139819509","1995726447"); // ای دی عددی ادمین ها
+@$dev = array("8889459676","8889459676","8889459676"); // ای دی عددی ادمین ها
 @$domain = "https://FlashSelf.site/FlashSelf";
 //•••••••••••••••••••••••••••••••••••••••••
 $connect = mysqli_connect($server,$username,$password,$db);
